@@ -42,7 +42,7 @@ public class SpringParallelRestClient {
                 int finalI = i;
                 executor.submit(() -> {
 
-                    String url = "http://localhost:9090/app/php/test_lock" + finalI; // replace with actual URL
+                    String url = "http://localhost:9090" + finalI; // replace with actual URL
                     log.info("Sending request to: " + url);
                     log.info("Thread being used for this request: " + Thread.currentThread().getName());
                     ResponseEntity<String> response = restTemplate.exchange(url, HttpMethod.GET, new HttpEntity<>(null, new HttpHeaders()), String.class);
